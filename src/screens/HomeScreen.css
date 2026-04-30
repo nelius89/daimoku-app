@@ -17,37 +17,24 @@
 }
 
 .lotus-button {
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  width: 180px;
-  height: 180px;
+  background: none;
+  border: none;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow:
-    0 8px 32px rgba(248, 200, 220, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
 .lotus-button:active {
   transform: scale(0.94);
-  box-shadow:
-    0 4px 16px rgba(248, 200, 220, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 @media (hover: hover) {
   .lotus-button:hover {
-    transform: scale(1.03);
-    box-shadow:
-      0 12px 40px rgba(248, 200, 220, 0.4),
-      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
   }
 }
 

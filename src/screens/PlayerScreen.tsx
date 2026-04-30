@@ -64,6 +64,29 @@ export function PlayerScreen({ track, onBack, onComplete, onPauseChange }: Props
           <span className="player-lotus" role="img" aria-label="loto">🪷</span>
         </div>
 
+        {/* Progress ring inline, no overlap */}
+        {!isEnded && duration > 0 && (
+          <div className="player-progress-wrap" aria-hidden="true">
+            <svg className="player-progress-svg" viewBox="0 0 100 100">
+              <circle
+                className="player-progress-track"
+                cx="50" cy="50" r="44"
+                fill="none"
+                strokeWidth="1"
+              />
+              <circle
+                className="player-progress-fill"
+                cx="50" cy="50" r="44"
+                fill="none"
+                strokeWidth="1"
+                strokeDasharray={`${2 * Math.PI * 44}`}
+                strokeDashoffset={`${2 * Math.PI * 44 * (1 - progress)}`}
+              />
+            </svg>
+            <div className="player-remaining">{formatTime(remaining)}</div>
+          </div>
+        )}
+
         <div className="player-label">
           {track.practice === 'daimoku'
             ? `Daimoku · ${track.durationMinutes} min`
@@ -74,29 +97,6 @@ export function PlayerScreen({ track, onBack, onComplete, onPauseChange }: Props
           <div className="player-complete-text">Finalizado</div>
         )}
       </div>
-
-      {/* Subtle progress ring — non-interactive */}
-      {!isEnded && duration > 0 && (
-        <div className="player-progress-wrap" aria-hidden="true">
-          <svg className="player-progress-svg" viewBox="0 0 100 100">
-            <circle
-              className="player-progress-track"
-              cx="50" cy="50" r="44"
-              fill="none"
-              strokeWidth="1"
-            />
-            <circle
-              className="player-progress-fill"
-              cx="50" cy="50" r="44"
-              fill="none"
-              strokeWidth="1"
-              strokeDasharray={`${2 * Math.PI * 44}`}
-              strokeDashoffset={`${2 * Math.PI * 44 * (1 - progress)}`}
-            />
-          </svg>
-          <div className="player-remaining">{formatTime(remaining)}</div>
-        </div>
-      )}
 
       {!isEnded && (
         <div className="player-controls">
