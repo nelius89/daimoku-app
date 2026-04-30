@@ -1,0 +1,100 @@
+.home-screen {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 60px 24px max(40px, env(safe-area-inset-bottom));
+}
+
+.home-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lotus-button {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow:
+    0 8px 32px rgba(248, 200, 220, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lotus-button:active {
+  transform: scale(0.94);
+  box-shadow:
+    0 4px 16px rgba(248, 200, 220, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+@media (hover: hover) {
+  .lotus-button:hover {
+    transform: scale(1.03);
+    box-shadow:
+      0 12px 40px rgba(248, 200, 220, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+}
+
+.lotus-emoji {
+  font-size: 80px;
+  line-height: 1;
+  display: block;
+  filter: drop-shadow(0 4px 12px rgba(218, 110, 140, 0.25));
+  animation: lotusPulse 6s ease-in-out infinite;
+}
+
+@keyframes lotusPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.home-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.gongyo-button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: rgba(80, 50, 60, 0.65);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 100px;
+  padding: 12px 28px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gongyo-button:active {
+  transform: scale(0.97);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@media (hover: hover) {
+  .gongyo-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: rgba(80, 50, 60, 0.85);
+  }
+}
