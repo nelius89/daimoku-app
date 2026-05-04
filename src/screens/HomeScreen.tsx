@@ -43,7 +43,7 @@ export function HomeScreen({ onLotusPress, onGongyoPress }: Props) {
           onClick={onLotusPress}
           aria-label="Practicar Daimoku"
         >
-          <span className="lotus-emoji" role="img" aria-hidden="true">🪷</span>
+          <img src="/loto.png" className="lotus-icon" alt="" aria-hidden="true" />
         </button>
       </div>
 

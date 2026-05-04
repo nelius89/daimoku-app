@@ -38,11 +38,11 @@
   }
 }
 
-.lotus-emoji {
-  font-size: 80px;
-  line-height: 1;
+.lotus-icon {
   display: block;
-  filter: drop-shadow(0 4px 12px rgba(218, 110, 140, 0.25));
+  height: 110px;
+  width: auto;
+  filter: drop-shadow(0 4px 16px rgba(180, 80, 120, 0.3));
   animation: lotusPulse 6s ease-in-out infinite;
 }
 

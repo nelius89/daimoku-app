@@ -10,27 +10,25 @@ interface Props {
 export function AnimatedBackground({ isPaused = false }: Props) {
   const reducedMotion = useReducedMotion();
   const tilt = useDeviceTilt(18, reducedMotion);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const gooeyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-    const el = containerRef.current;
-    el.style.transform = `translate(${tilt.x}px, ${tilt.y}px)`;
+    if (!gooeyRef.current) return;
+    gooeyRef.current.style.transform = `translate(${tilt.x}px, ${tilt.y}px)`;
   }, [tilt]);
 
   return (
     <div className="ab-wrapper">
       <div
-        ref={containerRef}
-        className={`ab-container ${isPaused ? 'ab-paused' : ''} ${reducedMotion ? 'ab-reduced' : ''}`}
+        ref={gooeyRef}
+        className={`ab-gooey ${isPaused ? 'ab-paused' : ''} ${reducedMotion ? 'ab-reduced' : ''}`}
       >
-        <div className="ab-base" />
         <div className="ab-blob ab-blob-1" />
         <div className="ab-blob ab-blob-2" />
         <div className="ab-blob ab-blob-3" />
         <div className="ab-blob ab-blob-4" />
-        <div className="ab-overlay" />
       </div>
+      <div className="ab-overlay" />
     </div>
   );
 }
