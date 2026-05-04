@@ -61,7 +61,7 @@ export function PlayerScreen({ track, onBack, onComplete, onPauseChange }: Props
 
       <div className="player-center">
         <div className={`player-lotus-wrap ${isEnded ? 'player-ended' : ''}`}>
-          <span className="player-lotus" role="img" aria-label="loto">🪷</span>
+          <img src="/loto.png" className="player-lotus" alt="" aria-hidden="true" />
         </div>
 
         {/* Progress ring inline, no overlap */}

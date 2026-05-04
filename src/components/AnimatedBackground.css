@@ -3,103 +3,100 @@
   inset: 0;
   overflow: hidden;
   z-index: 0;
-  background: #FFF1F2;
+  background: #F7ECD8;
 }
 
-/* El gooey trick: contrast en el padre + blur en los hijos = merging líquido */
 .ab-gooey {
   position: absolute;
-  inset: -80px; /* margen extra para que el tilt no descubra bordes */
-  background: #FFF1F2; /* debe coincidir con el fondo para que el gooey funcione */
-  filter: contrast(5);
+  inset: -80px;
+  background: #F7ECD8;
   will-change: transform;
 }
 
 .ab-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(38px);
+  filter: blur(70px);
+  opacity: 0.72;
   will-change: transform;
 }
 
 .ab-blob-1 {
-  width: 65vmax;
-  height: 65vmax;
-  top: -15%;
-  left: -15%;
-  background: #d4608e;
-  animation: blobFloat1 16s ease-in-out infinite;
+  width: 70vmax;
+  height: 70vmax;
+  top: -20%;
+  left: -20%;
+  background: #C8506A;
+  animation: blobFloat1 17s ease-in-out infinite;
 }
 
 .ab-blob-2 {
-  width: 58vmax;
-  height: 58vmax;
-  bottom: -15%;
-  right: -12%;
-  background: #9b6ac0;
-  animation: blobFloat2 20s ease-in-out infinite;
+  width: 62vmax;
+  height: 62vmax;
+  bottom: -18%;
+  right: -15%;
+  background: #D46A38;
+  animation: blobFloat2 21s ease-in-out infinite;
 }
 
 .ab-blob-3 {
-  width: 52vmax;
-  height: 52vmax;
-  top: 28%;
-  left: 18%;
-  background: #c8607a;
-  animation: blobFloat3 24s ease-in-out infinite;
+  width: 58vmax;
+  height: 58vmax;
+  top: 20%;
+  right: -10%;
+  background: #2E6875;
+  animation: blobFloat3 25s ease-in-out infinite;
 }
 
 .ab-blob-4 {
-  width: 46vmax;
-  height: 46vmax;
-  bottom: 8%;
-  left: -8%;
-  background: #b060a8;
-  animation: blobFloat4 18s ease-in-out infinite;
+  width: 50vmax;
+  height: 50vmax;
+  bottom: 5%;
+  left: -10%;
+  background: #D4607A;
+  animation: blobFloat4 19s ease-in-out infinite;
 }
 
-/* Overlay fuera del gooey — suaviza el resultado final de vuelta a pasteles */
+/* Velo cálido — suaviza sin enfriar */
 .ab-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 241, 242, 0.52);
+  background: rgba(247, 236, 216, 0.38);
   pointer-events: none;
 }
 
-/* Paused: ralentizar mucho */
 .ab-paused .ab-blob {
   animation-duration: 90s !important;
 }
 
-/* Reduced motion: congelar */
 .ab-reduced .ab-blob {
   animation: none;
 }
 
 @keyframes blobFloat1 {
   0%   { transform: translate(0, 0) scale(1); }
-  25%  { transform: translate(8%, 10%) scale(1.08); }
-  50%  { transform: translate(14%, 4%) scale(0.94); }
-  75%  { transform: translate(5%, 14%) scale(1.04); }
+  25%  { transform: translate(9%, 11%) scale(1.07); }
+  50%  { transform: translate(16%, 4%) scale(0.93); }
+  75%  { transform: translate(5%, 15%) scale(1.05); }
   100% { transform: translate(0, 0) scale(1); }
 }
 
 @keyframes blobFloat2 {
   0%   { transform: translate(0, 0) scale(1); }
-  33%  { transform: translate(-10%, -6%) scale(1.1); }
-  66%  { transform: translate(-4%, -13%) scale(0.92); }
+  33%  { transform: translate(-11%, -7%) scale(1.09); }
+  66%  { transform: translate(-5%, -14%) scale(0.91); }
   100% { transform: translate(0, 0) scale(1); }
 }
 
 @keyframes blobFloat3 {
   0%   { transform: translate(0, 0) scale(1) rotate(0deg); }
-  40%  { transform: translate(-12%, 10%) scale(1.12) rotate(18deg); }
-  80%  { transform: translate(6%, -8%) scale(0.90) rotate(-12deg); }
+  40%  { transform: translate(-14%, 12%) scale(1.13) rotate(20deg); }
+  80%  { transform: translate(7%, -9%) scale(0.89) rotate(-14deg); }
   100% { transform: translate(0, 0) scale(1) rotate(0deg); }
 }
 
 @keyframes blobFloat4 {
   0%   { transform: translate(0, 0) scale(1); }
-  50%  { transform: translate(12%, -10%) scale(1.06); }
+  50%  { transform: translate(13%, -11%) scale(1.07); }
   100% { transform: translate(0, 0) scale(1); }
 }

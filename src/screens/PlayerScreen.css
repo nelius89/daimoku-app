@@ -56,10 +56,10 @@
 }
 
 .player-lotus {
-  font-size: 64px;
-  line-height: 1;
   display: block;
-  filter: drop-shadow(0 4px 12px rgba(218, 110, 140, 0.2));
+  height: 90px;
+  width: auto;
+  filter: drop-shadow(0 4px 14px rgba(180, 80, 100, 0.25));
   animation: playerLotusDrift 8s ease-in-out infinite;
 }
 
