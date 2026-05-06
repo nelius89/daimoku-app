@@ -41,8 +41,8 @@
 /* Picker */
 .picker-wrapper {
   position: relative;
-  width: 180px;
-  height: 240px;
+  width: 200px;
+  height: 270px;
 }
 
 .picker-list {
@@ -60,13 +60,13 @@
 }
 
 .picker-spacer {
-  height: 80px;
+  height: 90px;
   scroll-snap-align: none;
   flex-shrink: 0;
 }
 
 .picker-item {
-  height: 80px;
+  height: 90px;
   scroll-snap-align: center;
   display: flex;
   align-items: center;
@@ -85,19 +85,19 @@
 
 .picker-number {
   font-family: 'Lustria', serif;
-  font-size: 64px;
+  font-size: 80px;
   color: #ffffff;
   line-height: 1;
 }
 
 .picker-unit {
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.04em;
   color: rgba(255, 255, 255, 0.65);
   align-self: flex-end;
-  padding-bottom: 12px;
+  padding-bottom: 16px;
 }
 
 /* Active item highlight line */
@@ -106,7 +106,7 @@
   top: 50%;
   left: -16px;
   right: -16px;
-  height: 80px;
+  height: 90px;
   transform: translateY(-50%);
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
