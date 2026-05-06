@@ -62,20 +62,17 @@ export function PlayerScreen({ track, onBack, onComplete, onPauseChange }: Props
         </svg>
       </button>
 
-      <div className="player-center">
+      <div className="player-top">
         <p className={`player-mantra ${isEnded ? 'player-mantra-ended' : ''}`}>
-          nam myoho renge kyo
+          nam myoho<br />renge kyo
         </p>
+      </div>
 
+      <div className="player-bottom">
         {!isEnded && duration > 0 && (
           <div className="player-progress-wrap" aria-hidden="true">
             <svg className="player-progress-svg" viewBox="0 0 100 100">
-              <circle
-                className="player-progress-track"
-                cx="50" cy="50" r="44"
-                fill="none"
-                strokeWidth="1"
-              />
+              <circle className="player-progress-track" cx="50" cy="50" r="44" fill="none" strokeWidth="1" />
               <circle
                 className="player-progress-fill"
                 cx="50" cy="50" r="44"
@@ -89,34 +86,28 @@ export function PlayerScreen({ track, onBack, onComplete, onPauseChange }: Props
           </div>
         )}
 
-        <div className="player-label">
-          {track.practice === 'daimoku'
-            ? `Daimoku · ${track.durationMinutes} min`
-            : 'Gongyo + Daimoku'}
-        </div>
-
         {isEnded && (
           <div className="player-complete-text">Finalizado</div>
         )}
-      </div>
 
-      {!isEnded && (
-        <div className="player-controls">
-          <button
-            className="player-pause-btn"
-            onClick={isPlaying ? handlePause : handlePlay}
-            aria-label={isPlaying ? 'Pausar práctica' : 'Reanudar práctica'}
-          >
-            {isPlaying ? (
-              <span className="player-icon player-icon-pause">
-                <span /><span />
-              </span>
-            ) : (
-              <span className="player-icon player-icon-play">▶</span>
-            )}
-          </button>
-        </div>
-      )}
+        {!isEnded && (
+          <div className="player-controls">
+            <button
+              className="player-pause-btn"
+              onClick={isPlaying ? handlePause : handlePlay}
+              aria-label={isPlaying ? 'Pausar práctica' : 'Reanudar práctica'}
+            >
+              {isPlaying ? (
+                <span className="player-icon player-icon-pause">
+                  <span /><span />
+                </span>
+              ) : (
+                <span className="player-icon player-icon-play">▶</span>
+              )}
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

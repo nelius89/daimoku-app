@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 60px 24px 48px;
 }
 
@@ -30,20 +29,19 @@
   opacity: 0.7;
 }
 
-.player-center {
+/* Mantra: ocupa el espacio entre el header y el ring */
+.player-top {
   flex: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
   width: 100%;
 }
 
-/* Mantra */
 .player-mantra {
   font-family: 'Lustria', serif;
   font-size: 26px;
+  line-height: 1.45;
   color: rgba(80, 50, 60, 0.7);
   letter-spacing: 0.08em;
   text-align: center;
@@ -61,19 +59,18 @@
   50%       { opacity: 0.55; }
 }
 
-.player-label {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  color: rgba(80, 50, 60, 0.7);
-  text-transform: uppercase;
+/* Ring + controls: apilados en la parte baja */
+.player-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
 }
 
 .player-complete-text {
   font-family: 'Lustria', serif;
   font-size: 22px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(80, 50, 60, 0.7);
   animation: fadeInUp 0.8s ease forwards;
 }
 
