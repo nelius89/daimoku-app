@@ -13,25 +13,21 @@
   position: absolute;
   top: max(24px, env(safe-area-inset-top));
   left: 24px;
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 50%;
+  background: none;
+  border: none;
   width: 44px;
   height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 18px;
-  color: rgba(80, 50, 60, 0.65);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   -webkit-tap-highlight-color: transparent;
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .back-button:active {
-  transform: scale(0.92);
+  transform: scale(0.88);
+  opacity: 0.7;
 }
 
 .duration-center {
@@ -149,26 +145,23 @@
   font-size: 15px;
   letter-spacing: 0.12em;
   color: rgba(80, 50, 60, 0.8);
-  background: rgba(255, 255, 255, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: #ffffff;
+  border: none;
   border-radius: 100px;
   padding: 16px 48px;
   cursor: pointer;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(248, 200, 220, 0.2);
-  transition: transform 0.15s ease, background 0.2s ease;
+  transition: transform 0.15s ease, opacity 0.2s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
 .play-button:active {
   transform: scale(0.96);
-  background: rgba(255, 255, 255, 0.5);
+  opacity: 0.85;
 }
 
 @media (hover: hover) {
   .play-button:hover {
-    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.9;
     transform: scale(1.02);
   }
 }

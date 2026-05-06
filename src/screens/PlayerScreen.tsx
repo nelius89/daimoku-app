@@ -56,7 +56,10 @@ export function PlayerScreen({ track, onBack, onComplete, onPauseChange }: Props
   return (
     <div className="player-screen">
       <button className="player-back" onClick={handleBack} aria-label="Volver al inicio">
-        <span>←</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12" />
+          <polyline points="12 19 5 12 12 5" />
+        </svg>
       </button>
 
       <div className="player-center">

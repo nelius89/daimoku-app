@@ -63,20 +63,18 @@
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.08em;
-  color: rgba(80, 50, 60, 0.55);
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgba(80, 50, 60, 0.65);
+  background: #ffffff;
+  border: none;
   border-radius: 100px;
   padding: 8px 16px;
   cursor: pointer;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   -webkit-tap-highlight-color: transparent;
-  transition: background 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .install-button:active {
-  background: rgba(255, 255, 255, 0.5);
+  opacity: 0.8;
 }
 
 .ios-hint {
@@ -118,25 +116,23 @@
   font-size: 14px;
   letter-spacing: 0.08em;
   color: rgba(80, 50, 60, 0.65);
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: #ffffff;
+  border: none;
   border-radius: 100px;
   padding: 12px 28px;
   cursor: pointer;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  transition: opacity 0.2s ease, transform 0.15s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
 .gongyo-button:active {
   transform: scale(0.97);
-  background: rgba(255, 255, 255, 0.4);
+  opacity: 0.85;
 }
 
 @media (hover: hover) {
   .gongyo-button:hover {
-    background: rgba(255, 255, 255, 0.4);
+    opacity: 0.9;
     color: rgba(80, 50, 60, 0.85);
   }
 }
