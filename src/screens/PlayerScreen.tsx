@@ -62,50 +62,51 @@ export function PlayerScreen({ track, onBack, onComplete, onPauseChange }: Props
         </svg>
       </button>
 
+      {/* Mitad superior: mantra alineado abajo */}
       <div className="player-top">
         <p className={`player-mantra ${isEnded ? 'player-mantra-ended' : ''}`}>
           nam myoho<br />renge kyo
         </p>
       </div>
 
+      {/* Ring: en el punto medio exacto de la pantalla */}
+      {!isEnded && duration > 0 && (
+        <div className="player-progress-wrap" aria-hidden="true">
+          <svg className="player-progress-svg" viewBox="0 0 100 100">
+            <circle className="player-progress-track" cx="50" cy="50" r="44" fill="none" strokeWidth="1" />
+            <circle
+              className="player-progress-fill"
+              cx="50" cy="50" r="44"
+              fill="none"
+              strokeWidth="1"
+              strokeDasharray={`${2 * Math.PI * 44}`}
+              strokeDashoffset={`${2 * Math.PI * 44 * (1 - progress)}`}
+            />
+          </svg>
+          <div className="player-remaining">{formatTime(remaining)}</div>
+        </div>
+      )}
+
+      {isEnded && (
+        <div className="player-complete-text">Finalizado</div>
+      )}
+
+      {/* Mitad inferior: controles alineados arriba */}
       <div className="player-bottom">
-        {!isEnded && duration > 0 && (
-          <div className="player-progress-wrap" aria-hidden="true">
-            <svg className="player-progress-svg" viewBox="0 0 100 100">
-              <circle className="player-progress-track" cx="50" cy="50" r="44" fill="none" strokeWidth="1" />
-              <circle
-                className="player-progress-fill"
-                cx="50" cy="50" r="44"
-                fill="none"
-                strokeWidth="1"
-                strokeDasharray={`${2 * Math.PI * 44}`}
-                strokeDashoffset={`${2 * Math.PI * 44 * (1 - progress)}`}
-              />
-            </svg>
-            <div className="player-remaining">{formatTime(remaining)}</div>
-          </div>
-        )}
-
-        {isEnded && (
-          <div className="player-complete-text">Finalizado</div>
-        )}
-
         {!isEnded && (
-          <div className="player-controls">
-            <button
-              className="player-pause-btn"
-              onClick={isPlaying ? handlePause : handlePlay}
-              aria-label={isPlaying ? 'Pausar práctica' : 'Reanudar práctica'}
-            >
-              {isPlaying ? (
-                <span className="player-icon player-icon-pause">
-                  <span /><span />
-                </span>
-              ) : (
-                <span className="player-icon player-icon-play">▶</span>
-              )}
-            </button>
-          </div>
+          <button
+            className="player-pause-btn"
+            onClick={isPlaying ? handlePause : handlePlay}
+            aria-label={isPlaying ? 'Pausar práctica' : 'Reanudar práctica'}
+          >
+            {isPlaying ? (
+              <span className="player-icon player-icon-pause">
+                <span /><span />
+              </span>
+            ) : (
+              <span className="player-icon player-icon-play">▶</span>
+            )}
+          </button>
         )}
       </div>
     </div>

@@ -29,12 +29,13 @@
   opacity: 0.7;
 }
 
-/* Mantra: ocupa el espacio entre el header y el ring */
+/* Mitad superior — mantra pegado a la parte baja de su zona */
 .player-top {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  padding-bottom: 32px;
   width: 100%;
 }
 
@@ -59,27 +60,7 @@
   50%       { opacity: 0.55; }
 }
 
-/* Ring + controls: apilados en la parte baja */
-.player-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-}
-
-.player-complete-text {
-  font-family: 'Lustria', serif;
-  font-size: 22px;
-  color: rgba(80, 50, 60, 0.7);
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Progress ring */
+/* Ring: ocupa su tamaño natural, queda en el centro exacto */
 .player-progress-wrap {
   position: relative;
   width: min(60vw, 220px);
@@ -88,6 +69,7 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  flex-shrink: 0;
 }
 
 .player-progress-svg {
@@ -117,13 +99,29 @@
   white-space: nowrap;
 }
 
-/* Controls */
-.player-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.player-complete-text {
+  font-family: 'Lustria', serif;
+  font-size: 22px;
+  color: rgba(80, 50, 60, 0.7);
+  animation: fadeInUp 0.8s ease forwards;
+  flex-shrink: 0;
 }
 
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mitad inferior — controles pegados a la parte alta de su zona */
+.player-bottom {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+/* Controls */
 .player-pause-btn {
   width: 64px;
   height: 64px;
