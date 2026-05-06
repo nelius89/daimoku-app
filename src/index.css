@@ -1,1 +1,6 @@
 /* Reset — App.css handles all styles */
+html, body, #root {
+  background: #E8EE96;
+  margin: 0;
+  padding: 0;
+}
