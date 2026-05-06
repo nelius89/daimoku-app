@@ -41,8 +41,8 @@
 /* Picker */
 .picker-wrapper {
   position: relative;
-  width: 160px;
-  height: 210px;
+  width: 180px;
+  height: 240px;
 }
 
 .picker-list {
@@ -51,6 +51,8 @@
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 28%, black 72%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 28%, black 72%, transparent 100%);
 }
 
 .picker-list::-webkit-scrollbar {
@@ -58,13 +60,13 @@
 }
 
 .picker-spacer {
-  height: 70px;
+  height: 80px;
   scroll-snap-align: none;
   flex-shrink: 0;
 }
 
 .picker-item {
-  height: 70px;
+  height: 80px;
   scroll-snap-align: center;
   display: flex;
   align-items: center;
@@ -72,8 +74,8 @@
   gap: 6px;
   cursor: pointer;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  opacity: 0.3;
-  transform: scale(0.85);
+  opacity: 0.35;
+  transform: scale(0.82);
 }
 
 .picker-item-active {
@@ -83,39 +85,19 @@
 
 .picker-number {
   font-family: 'Lustria', serif;
-  font-size: 52px;
-  color: rgba(80, 50, 60, 0.85);
+  font-size: 64px;
+  color: #ffffff;
   line-height: 1;
 }
 
 .picker-unit {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.06em;
-  color: rgba(80, 50, 60, 0.5);
+  color: rgba(255, 255, 255, 0.65);
   align-self: flex-end;
-  padding-bottom: 10px;
-}
-
-/* Fade gradients top/bottom */
-.picker-fade {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 70px;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.picker-fade-top {
-  top: 0;
-  background: linear-gradient(to bottom, rgba(247, 236, 216, 0.88), transparent);
-}
-
-.picker-fade-bottom {
-  bottom: 0;
-  background: linear-gradient(to top, rgba(247, 236, 216, 0.88), transparent);
+  padding-bottom: 12px;
 }
 
 /* Active item highlight line */
@@ -124,10 +106,10 @@
   top: 50%;
   left: -16px;
   right: -16px;
-  height: 70px;
+  height: 80px;
   transform: translateY(-50%);
-  border-top: 1px solid rgba(218, 150, 170, 0.2);
-  border-bottom: 1px solid rgba(218, 150, 170, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   pointer-events: none;
   z-index: 1;
 }

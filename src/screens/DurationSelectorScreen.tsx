@@ -31,7 +31,6 @@ export function DurationSelectorScreen({ onStart, onBack }: Props) {
 
       <div className="duration-center">
         <div className="picker-wrapper">
-          <div className="picker-fade picker-fade-top" />
           <div
             ref={listRef}
             className="picker-list"
@@ -39,7 +38,6 @@ export function DurationSelectorScreen({ onStart, onBack }: Props) {
             role="listbox"
             aria-label="Duración del Daimoku"
           >
-            {/* Spacer items for scroll snap centering */}
             <div className="picker-spacer" aria-hidden="true" />
             {DAIMOKU_DURATIONS.map((d) => (
               <div
@@ -54,7 +52,6 @@ export function DurationSelectorScreen({ onStart, onBack }: Props) {
             ))}
             <div className="picker-spacer" aria-hidden="true" />
           </div>
-          <div className="picker-fade picker-fade-bottom" />
           <div className="picker-highlight" aria-hidden="true" />
         </div>
       </div>
