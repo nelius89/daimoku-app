@@ -50,6 +50,13 @@ export function HomeScreen({ onLotusPress, onGongyoPress }: Props) {
       <div className="home-bottom">
         <button
           className="gongyo-button"
+          onClick={onLotusPress}
+          aria-label="Practicar Daimoku"
+        >
+          Daimoku
+        </button>
+        <button
+          className="gongyo-button"
           onClick={onGongyoPress}
           aria-label="Practicar Gongyo y Daimoku"
         >
