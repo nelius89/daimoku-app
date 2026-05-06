@@ -63,11 +63,10 @@ export function PlayerScreen({ track, onBack, onComplete, onPauseChange }: Props
       </button>
 
       <div className="player-center">
-        <div className={`player-lotus-wrap ${isEnded ? 'player-ended' : ''}`}>
-          <img src="/loto.png" className="player-lotus" alt="" aria-hidden="true" />
-        </div>
+        <p className={`player-mantra ${isEnded ? 'player-mantra-ended' : ''}`}>
+          nam myoho renge kyo
+        </p>
 
-        {/* Progress ring inline, no overlap */}
         {!isEnded && duration > 0 && (
           <div className="player-progress-wrap" aria-hidden="true">
             <svg className="player-progress-svg" viewBox="0 0 100 100">
